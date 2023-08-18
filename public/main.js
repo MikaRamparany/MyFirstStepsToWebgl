@@ -5,17 +5,17 @@ if(!gl) {
 
     throw new Error ('Webgl is not supported');
 }
-
+// LES ETAPES : 
 // vertexDate = [];
 
 // create Buffer
 
 // load vertexDate into Buffer
 
-// creat vertex shader 
-// creat fragment shader
+// create vertex shader 
+// create fragment shader
 
-// creat program
+// create program
 
 // attach shaders to program
 // enable vertex attributes
