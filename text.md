@@ -76,3 +76,8 @@ Les attributs de vertex sont des données qui sont passées au shader de sommets
 Enfin, on effectue le dessin proprement dit en utilisant la fonction gl.drawArrays(). On spécifie le mode de dessin (dans cet exemple, gl.TRIANGLES pour dessiner des triangles), l'indice de départ et le nombre de sommets à dessiner.
 
 RESUME : Ces étapes constituent l'essentiel du processus de rendu WebGL. Elles nous permettent de transférer des données vers la carte graphique, de définir comment ces données seront utilisées pour créer des formes et de créer des shaders pour contrôler l'apparence visuelle de ces formes. En fin de compte, cela aboutit au rendu d'images interactives en 2D et 3D dans un navigateur web.
+
+
+
+
+sources : INvent Box Tuto : https://www.youtube.com/watch?v=bP7_FeP9kU4&list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK&index=1
