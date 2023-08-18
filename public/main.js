@@ -49,8 +49,8 @@ gl.shaderSource(vertexShader,
     
     attribute vec3 position;
     attribute vec3 color;
-    varying vec3 vcolor;
-    
+    varying vec3 vColor;
+
     void main () {
         vColor = color;
         gl_Position = vec4(position, 1);
@@ -64,7 +64,7 @@ gl.shaderSource(fragmentShader,
     `
     precision mediump float;
 
-    varying vec3 vcolor;
+    varying vec3 vColor;
     
     void main () {
         gl_FragColor = vec4(vColor, 1);
@@ -85,7 +85,7 @@ gl.vertexAttribPointer(positionLocation, 3, gl.FLOAT, false, 0, 0);
 const colorLocation = gl.getAttribLocation(program, 'color');
 gl.enableVertexAttribArray(colorLocation);
 gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-gl.vertexAttribPointer(colorLocation, colorBuffer, 3, gl.FLOAT, false, 0, 0);
+gl.vertexAttribPointer(colorLocation, 3, gl.FLOAT, false, 0, 0);
 
 gl.useProgram(program);
 gl.drawArrays(gl.TRIANGLES, 0, 3);
