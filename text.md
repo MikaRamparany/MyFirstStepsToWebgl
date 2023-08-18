@@ -82,7 +82,7 @@ RESUME : Ces étapes constituent l'essentiel du processus de rendu WebGL. Elles 
 
 
 
-##### EPISODE 4 : 
+##### EPISODE 4 : faire un triangle multicolor (variant) avec 3 couleurs primaires sur les 3 sommets 
 
 source : youtube.com/watch?v=zbS4a10xBk8
 
