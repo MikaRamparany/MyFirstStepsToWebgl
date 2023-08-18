@@ -21,6 +21,8 @@ On va voir comment il marche...
 Les vertex (sommets) jouent un rôle essentiel dans le rendu d'images 3D, car ils déterminent la structure et la géométrie des objets affichés à l'écran. En d'autres termes, ils sont les "points de base" à partir desquels les objets 3D prennent forme et apparence.
 
 
+## Episode 3 : Geometries dessin d'un triangle rouge : 
+sources : INvent Box Tuto : https://www.youtube.com/watch?v=bP7_FeP9kU4&list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK&index=1
 
 ### Voici la traduction et l'explication des étapes dans main.js: lié à l'épisode 3 de la playlist de Invent Box
 
@@ -80,4 +82,8 @@ RESUME : Ces étapes constituent l'essentiel du processus de rendu WebGL. Elles 
 
 
 
-sources : INvent Box Tuto : https://www.youtube.com/watch?v=bP7_FeP9kU4&list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK&index=1
+##### EPISODE 4 : 
+
+source : youtube.com/watch?v=zbS4a10xBk8
+
+
