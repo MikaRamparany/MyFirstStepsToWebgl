@@ -28,15 +28,31 @@ const vertexData = [
     -1, -1, 0,
 ];
 
-const buffer = gl.createBuffer();
-gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+const colorData =[
+    1, 0, 0, // V1.color
+    0, 1, 0, // V2.color
+    0, 0, 1, // V3.color
+];
+ // on va rename les deux const ci-dessous en positionBuffer et colorBuffer
+const positionBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.STATIC_DRAW);
+
+const colorBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorData), gl.STATIC_DRAW);
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
 gl.shaderSource(vertexShader,
-    `attribute vec3 position;
+    `precision mediump float;
+    
+    
+    attribute vec3 position;
+    attribute vec3 color;
+    varying vec3 vcolor;
     
     void main () {
+        vColor = color;
         gl_Position = vec4(position, 1);
     }`
 );
@@ -45,8 +61,13 @@ gl.compileShader(vertexShader);
 const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
 gl.shaderSource(fragmentShader,
     // Correction : Ajouter les accolades ouvrantes et fermantes autour de la fonction main
-    `void main () {
-        gl_FragColor = vec4(1, 0, 0, 1);
+    `
+    precision mediump float;
+
+    varying vec3 vcolor;
+    
+    void main () {
+        gl_FragColor = vec4(vColor, 1);
     }`
 );
 gl.compileShader(fragmentShader);
@@ -58,7 +79,13 @@ gl.linkProgram(program);
 
 const positionLocation = gl.getAttribLocation(program, 'position');
 gl.enableVertexAttribArray(positionLocation);
+gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 gl.vertexAttribPointer(positionLocation, 3, gl.FLOAT, false, 0, 0);
+
+const colorLocation = gl.getAttribLocation(program, 'color');
+gl.enableVertexAttribArray(colorLocation);
+gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+gl.vertexAttribPointer(colorLocation, colorBuffer, 3, gl.FLOAT, false, 0, 0);
 
 gl.useProgram(program);
 gl.drawArrays(gl.TRIANGLES, 0, 3);
