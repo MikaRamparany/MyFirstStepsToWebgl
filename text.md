@@ -168,3 +168,5 @@ Donc voici les étapes :
 2- Dans votre code JavaScript où vous utilisez gl-matrix-min, vous pouvez l'importer comme ceci :
 
 code : import * as glmatrix from 'gl-matrix';
+
+
