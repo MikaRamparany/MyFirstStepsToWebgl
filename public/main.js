@@ -1,3 +1,7 @@
+// import de GL Matrix depuis la bibliothèque 'gl-matrix';
+
+import * as glMatrix from 'gl-matrix';
+
 const canvas = document.querySelector ('canvas');
 const gl = canvas.getContext ('webgl');
 
@@ -21,6 +25,11 @@ if(!gl) {
 // enable vertex attributes
 
 // draw
+
+// création de la matrice / matrix 
+
+const matrix = mat4.create();
+
 
 const vertexData = [
     0, 1, 0,
@@ -89,3 +98,4 @@ gl.vertexAttribPointer(colorLocation, 3, gl.FLOAT, false, 0, 0);
 
 gl.useProgram(program);
 gl.drawArrays(gl.TRIANGLES, 0, 3);
+
