@@ -22,7 +22,7 @@ Les vertex (sommets) jouent un rôle essentiel dans le rendu d'images 3D, car il
 
 
 
-### Voici la traduction et l'explication des étapes dans main.js: 
+### Voici la traduction et l'explication des étapes dans main.js: lié à l'épisode 3 de la playlist de Invent Box
 
 // LES ÉTAPES :
 // Définition des données de vertex (sommets)
