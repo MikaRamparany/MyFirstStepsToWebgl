@@ -20,3 +20,18 @@ On va voir comment il marche...
 
 Les vertex (sommets) jouent un rôle essentiel dans le rendu d'images 3D, car ils déterminent la structure et la géométrie des objets affichés à l'écran. En d'autres termes, ils sont les "points de base" à partir desquels les objets 3D prennent forme et apparence.
 
+// vertexDate = [];
+
+// create Buffer
+
+// load vertexDate into Buffer
+
+// creat vertex shader 
+// creat fragment shader
+
+// creat program
+
+// attach shaders to program
+// enable vertex attributes
+
+// draw
