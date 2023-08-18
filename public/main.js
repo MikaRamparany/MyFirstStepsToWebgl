@@ -1,36 +1,11 @@
 
-import { mat4 } from 'gl-matrix';
 
+const canvas = document.querySelector('canvas');
+const gl = canvas.getContext('webgl');
 
-
-
-const canvas = document.querySelector ('canvas');
-const gl = canvas.getContext ('webgl');
-
-if(!gl) {
-
-    throw new Error ('Webgl is not supported');
+if (!gl) {
+    throw new Error('WebGL is not supported');
 }
-// LES ETAPES : 
-// vertexDate = [];
-
-// create Buffer
-
-// load vertexDate into Buffer
-
-// create vertex shader 
-// create fragment shader
-
-// create program
-
-// attach shaders to program
-// enable vertex attributes
-
-// draw
-
-// création de la matrice / matrix 
-
-
 
 const vertexData = [
     0, 1, 0,
@@ -38,12 +13,12 @@ const vertexData = [
     -1, -1, 0,
 ];
 
-const colorData =[
+const colorData = [
     1, 0, 0, // V1.color
     0, 1, 0, // V2.color
     0, 0, 1, // V3.color
 ];
- // on va rename les deux const ci-dessous en positionBuffer et colorBuffer
+
 const positionBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.STATIC_DRAW);
@@ -53,16 +28,14 @@ gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorData), gl.STATIC_DRAW);
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
-gl.shaderSource(vertexShader,
+gl.shaderSource(
+    vertexShader,
     `precision mediump float;
-    
     
     attribute vec3 position;
     attribute vec3 color;
     varying vec3 vColor;
-
     uniform mat4 matrix;
-
 
     void main () {
         vColor = color;
@@ -102,12 +75,12 @@ gl.vertexAttribPointer(colorLocation, 3, gl.FLOAT, false, 0, 0);
 
 gl.useProgram(program);
 
-const uniformLocation ={
-    matric: gl.getUniformLocation(program,`matrix`),
+const uniformLocation = {
+    matrix: gl.getUniformLocation(program, 'matrix'),
 };
 
 const matrix = mat4.create();
-mat4.translate(matrix,matrix,[.2, .5, 0]);
+mat4.translate(matrix, matrix, [.2, .5, 0]);
 mat4.scale(matrix, matrix, [0.25, 0.25, 0.25]);
 
 function animate() {
@@ -118,11 +91,3 @@ function animate() {
 }
 
 animate();
-console.log(animate());
-
-
-
-
-
-
-
